@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وجه يعرفه الضوء - رواية كاملة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c1a 0%, #1a1a2e 50%, #2d2d44 100%);
+            color: #f0f0ff;
+            font-family: 'El Messiri', sans-serif;
+            line-height: 1.9;
+            padding: 0;
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 60px 30px 40px;
+            background: linear-gradient(135deg, rgba(25, 20, 50, 0.9) 0%, rgba(40, 30, 70, 0.85) 100%);
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-bottom: 3px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M40,100 C40,60 60,40 100,40 C140,40 160,60 160,100 C160,140 140,160 100,160 C60,160 40,140 40,100 Z" fill="none" stroke="rgba(212,175,55,0.08)" stroke-width="2"/></svg>');
+            background-size: 180px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .title-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(15, 12, 30, 0.6);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        h1 {
+            font-size: 4.2rem;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            text-shadow: 0 0 20px rgba(244, 208, 63, 0.5);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(to right, #f4d03f, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0 20px;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #c0c0ff;
+            margin-top: 25px;
+            line-height: 1.7;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .author {
+            font-size: 1.2rem;
+            color: #a3a3cc;
+            margin-top: 20px;
+            font-style: italic;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .author i {
+            color: #d4af37;
+        }
+        
+        .chapters-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+        
+        .chapter {
+            background: linear-gradient(145deg, rgba(25, 22, 45, 0.9) 0%, rgba(35, 30, 60, 0.85) 100%);
+            border-radius: 30px;
+            padding: 50px 45px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35), 
+                        inset 0 0 20px rgba(80, 60, 150, 0.1);
+            border: 1px solid rgba(100, 80, 180, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        
+        .chapter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #f4d03f, #d4af37, #f4d03f);
+            opacity: 0.8;
+        }
+        
+        .chapter:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 
+                        inset 0 0 25px rgba(100, 80, 200, 0.15);
+        }
+        
+        .chapter-title {
+            color: #f4d03f;
+            font-size: 2.6rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        
+        .chapter-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            width: 40%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(244, 208, 63, 0.8), transparent);
+            border-radius: 50%;
+        }
+        
+        .chapter-content {
+            font-size: 1.45rem;
+            text-align: justify;
+            letter-spacing: 0.5px;
+            padding: 0 20px;
+            line-height: 2.1;
+        }
+        
+        .chapter-content p {
+            margin-bottom: 30px;
+            text-indent: 40px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .chapter-content p::before {
+            content: "❝";
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.3);
+            font-family: serif;
+        }
+        
+        .highlight {
+            color: #f4d03f;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(244, 208, 63, 0.4);
+            font-style: italic;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(180, 150, 255, 0.5), transparent);
+            margin: 40px 0;
+            width: 80%;
+            margin-left: 10%;
+        }
+        
+        .quote {
+            padding: 30px;
+            margin: 35px 0;
+            border-right: 4px solid #d4af37;
+            background: linear-gradient(to left, rgba(40, 30, 70, 0.5), rgba(50, 35, 90, 0.3));
+            border-radius: 0 20px 20px 0;
+            font-style: italic;
+            font-size: 1.4rem;
+            line-height: 2.0;
+            position: relative;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        .quote::before {
+            content: """;
+            position: absolute;
+            top: -25px;
+            right: 20px;
+            font-size: 8rem;
+            color: rgba(212, 175, 55, 0.15);
+            font-family: serif;
+            z-index: -1;
+        }
+        
+        .quote::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, transparent);
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0 30px;
+            padding: 0 30px;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(145deg, rgba(40, 30, 70, 0.8), rgba(50, 35, 90, 0.9));
+            color: #f4d03f;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-btn:hover {
+            background: linear-gradient(145deg, rgba(50, 40, 80, 0.9), rgba(60, 45, 100, 0.95));
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .chapter-counter {
+            text-align: center;
+            color: #c0c0ff;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            background: rgba(30, 25, 55, 0.6);
+            padding: 10px 30px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 20px auto;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chapter-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(145deg, #f4d03f, #d4af37);
+            color: #1a1a2e;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating-decoration {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .decoration-2 {
+            bottom: 15%;
+            right: 5%;
+            width: 250px;
+            height: 250px;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .title-container {
+                padding: 20px 15px;
+            }
+            
+            .chapter {
+                padding: 35px 25px;
+            }
+            
+            .chapter-title {
+                font-size: 2.2rem;
+            }
+            
+            .chapter-content {
+                font-size: 1.3rem;
+                padding: 0 10px;
+            }
+            
+            .quote {
+                padding: 25px 20px;
+                font-size: 1.25rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .chapter {
+                padding: 30px 20px;
+            }
+            
+            .chapter-title {
+                font-size: 1.9rem;
+                margin-bottom: 30px;
+            }
+            
+            .chapter-content {
+                font-size: 1.2rem;
+            }
+            
+            .quote {
+                font-size: 1.15rem;
+            }
+        }
+        
+        /* تأثيرات النص */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-text {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delayed-animation {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- الزخارف العائمة -->
+    <div class="floating-decoration decoration-1"></div>
+    <div class="floating-decoration decoration-2"></div>
+    
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <h1 class="animate-text">وجه يعرفه الضوء</h1>
+                <p class="subtitle animate-text delayed-animation">رواية عن الضياع والوجدان والعثور على الذات في زمن فقدان المعنى</p>
+                <p class="author animate-text delayed-animation"><i class="fas fa-pen-nib"></i> رواية: قلم مجهول | تصميم: روايات أدبية</p>
+            </div>
+        </header>
+        
+        <div class="chapters-container">
+            
+            <!-- الفصل الأول -->
+            <div class="chapter">
+                <h2 class="chapter-title">الفصل الأول: وجه يعرفه الضوء</h2>
+                <div class="chapter-content">
+                    <p>لم يكن أحدٌ يعرف الحكاية كلها،<br>
+                    لكن كل من رآها، شعر بشيء مألوف.<br>
+                    كأن الحياة مرّت من هناك… من عند تلك النظرة،<br>
+                    من ذلك الصمت الذي يشبه البوح.</p>
+                    
+                    <p>كانت تمشي وكأنها لا تمشي،<br>
+                    بل تُساق بخيطٍ خفيٍّ من الأسئلة،<br>
+                    كأنها تحمل شيئًا لا يُقال…<br>
+                    وتبتسم لتغطي على صوتٍ في داخلها،<br>
+                    ما زال يحاول أن يشرح نفسه للعالم.</p>
+                    
+                    <p>لم يُذكر اسمها،<br>
+                    لكن ملامحها،<br>
+                    أسلوبها،<br>
+                    طريقة التحديق في التفاصيل الصغيرة…<br>
+                    كلها كانت تنطق:<br>
+                    <span class="highlight">"هذه هي."</span></p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h3 class="chapter-title" style="font-size: 2.2rem; margin: 30px 0;">الفصل الأول: وجه يعرفه الضوء (تكملة)</h3>
+                    
+                    <p>في كل مدينة مرت بها،<br>
+                    ترك الناس أسماءهم على الجدران،<br>
+                    أما هي، فتركت أثرًا لا يُمحى…<br>
+                    نظرة، أو عبارة قيلت في لحظة صدق،<br>
+                    أو قهوة لم تُكملها لأنها شعرت أن أحدهم سيغادر قريبًا.</p>
+                    
+                    <p>لم تكن تبحث عن أحد،<br>
+                    لكن كل من اقترب منها شعر أنه وجد شيئًا كان ضائعًا.<br>
+                    كانت تقرأ كثيرًا،<br>
+                    لا لتعرف،<br>
+                    بل لتنسى…<br>
+                    تنسى كم مرة تغيّر وجه العالم دون أن يعتذر لها.</p>
+                    
+                    <div class="quote">
+                        "في دفاترها، كلمات ممزقة، تواريخ مشطوبة، وجمل تبدأ ولا تنتهي، كأنها كانت تكتب رسائل لم تجرؤ على إرسالها."
+                    </div>
+                    
+                    <p>الذين عرفوها،<br>
+                    لم يكونوا بحاجة إلى اسمها،<br>
+                    لأنها كانت أكبر من الأسماء،<br>
+                    كانت إحساسًا…<br>
+                    وكل من قرأ هذه الرواية<br>
+                    عرف الحقيقة:<br>
+                    هذه ليست قصة من نسج الخيال…<br>
+                    بل صفحة من حياتها.</p>
+                </div>
+            </div>
+            
+            <!-- الفصل الثاني -->
+            <div class="chapter">
+                <h2 class="chapter-title">الفصل الثاني: حين بدأ كل شيء</h2>
+                <div class="chapter-content">
+                    <p>لم تكن لحظة درامية كما في الأفلام.<br>
+                    ما صار في تلك الدقيقة ما يُكتب في الصحف…<br>
+                    لكنّ قلبها شعر بانكسار هادئ،<br>
+                    كأن أحدهم أغلق الباب خلفه دون صوت،<br>
+                    لكنه نسي أن يأخذ روحه معه.</p>
+                    
+                    <p>كان ذلك اليوم عادياً…<br>
+                    الناس تمشي، والشمس ساطعة،<br>
+                    وهي جالسة في مقعدها المعتاد، تمسك كوب قهوتها،<br>
+                    لكنها كانت تشعر بشيء لا يُوصف،<br>
+                    كأن شيئًا انكسر داخلها دون ضجيج.</p>
+                    
+                    <div class="quote">
+                        "من بعدها، صارت تخاف من اللحظات الهادئة، لأن أكثر الوداع… جاءها بدون صوت."
+                    </div>
+                    
+                    <p>كانت تلك البداية الحقيقية.<br>
+                    ليس للحزن فقط…<br>
+                    بل لكل شيء.<br>
+                    للقوة التي بنتها،<br>
+                    للمسافات التي وضعتها بينها وبين الناس،<br>
+                    للابتسامة التي صارت تظهر أقل فأقل.</p>
+                    
+                    <p>من بعدها،<br>
+                    لم تعد هي نفسها.</p>
+                </div>
+            </div>
+            
+            <!-- الفصل الثالث -->
+            <div class="chapter">
+                <h2 class="chapter-title">الفصل الثالث: العزلة التي اختارتها</h2>
+                <div class="chapter-content">
+                    <p>لم يكن أحد يعلم أنها اختارت العزلة،<br>
+                    ليس كرهًا بالبشر،<br>
+                    ولا غرورًا ولا ضعفًا…<br>
+                    بل لأنها تعبت من أن تكون "حاضرة"<br>
+                    في قلوبٍ لا تملك لها مكانًا.</p>
+                    
+                    <div class="quote">
+                        "بدأت تستمتع بالوحدة، لا لأنها جميلة، بل لأنها على الأقل… لا تخذل."
+                    </div>
+                    
+                    <p>كل شيء صار له توقيت محدد:<br>
+                    كوب القهوة عند السادسة،<br>
+                    المشي الطويل بلا وجهة بعد الغروب،<br>
+                    وإعادة قراءة نفس الرسالة القديمة،<br>
+                    مرة بعد مرة…<br>
+                    كأنها تُحاول أن تفهم:<br>
+                    هل كان هناك خطأ؟<br>
+                    هل فاتها شيء؟<br>
+                    أم أنها كانت فقط، أكثر صدقًا من اللازم؟</p>
+                    
+                    <p>وفي كل ليلة،<br>
+                    قبل أن تنام،<br>
+                    تسحب غطاءها وتحدّق في السقف،<br>
+                    وتفكر…<br>
+                    هل حقًا تجاوزت؟<br>
+                    أم أنني فقط تعلمتُ كيف أبدو بخير؟</p>
+                </div>
+            </div>
+            
+            <!-- الفصل الرابع -->
+            <div class="chapter">
+                <h2 class="chapter-title">الفصل الرابع: لقاء غير متوقع</h2>
+                <div class="chapter-content">
+                    <p>في يوم ممطر،<br>
+                    بينما كانت تتأمل قطرات المطر على النافذة،<br>
+                    رأته للمرة الأولى.<br>
+                    لم يكن مختلفًا في شكله،<br>
+                    لكنه كان مختلفًا في طريقة وجوده،<br>
+                    كأنه جزء من المشهد،<br>
+                    لا دخيل عليه.</p>
+                    
+                    <div class="quote">
+                        "أحيانًا يأتي شخص ما، ويجلس بجوار صمتك، ولا يحاول كسره، بل يصنع من صمتكما حوارًا."
+                    </div>
+                    
+                    <p>بدأت تتحدثان،<br>
+                    لا عن الماضي،<br>
+                    ولا عن المستقبل،<br>
+                    بل عن اللحظة.<br>
+                    عن رائحة المطر،<br>
+                    عن صخب المدينة الذي يشبه نبض قلب كبير،<br>
+                    عن الكتب التي تترك ندوبًا في الروح.</p>
+                    
+                    <p>لم يعدما يلتقيان كل يوم،<br>
+                    لكن حين يلتقيان،<br>
+                    كان العالم يتوقف للحظات,<br>
+                    كأن الزمن يمنحهما هدية صغيرة<br>
+                    ليعيدا اكتشاف معنى الوجود.</p>
+                </div>
+            </div>
+            
+            <!-- الفصل الخامس -->
+            <div class="chapter">
+                <h2 class="chapter-title">الفصل الخامس: بداية جديدة</h2>
+                <div class="chapter-content">
+                    <p>لم تكن تعرف متى حدث التغيير،<br>
+                    لكنها بدأت تلاحظ أن الضوء صار يدخل غرفتها بزوايا جديدة.<br>
+                    أن القهوة صارت ألذ،<br>
+                    أن الأغاني صارت تحمل معاني لم تكن تسمعها من قبل.</p>
+                    
+                    <div class="quote">
+                        "اكتشفت أن الجروح لا تشفى بالنسيان، بل بالحب الذي يملأ الفراغات بين الذكريات."
+                    </div>
+                    
+                    <p>في أحد الأيام،<br>
+                    بينما كانت تجلس في المقهى المعتاد،<br>
+                    وضع أمامها كتابًا صغيرًا.<br>
+                    على غلافه صورة لطريق ضبابي،<br>
+                    وعنوانه: "وجه يعرفه الضوء".</p>
+                    
+                    <p>لم تعد تلك المرأة التي تختبئ خلف الابتسامات،<br>
+                    ولا تلك التي تخاف من الوداع الصامت.<br>
+                    صارت تعرف أن الحياة ليست رحلة إلى نهاية،<br>
+                    بل هي سلسلة من البدايات المتجددة.</p>
+                    
+                    <p>وفي دفترها الجديد،<br>
+                    كتبت على الصفحة الأولى:<br>
+                    <span class="highlight">"اليوم، بدأت أرى وجهي يعرفه الضوء."</span></p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-btn"><i class="fas fa-arrow-right"></i> الفصل السابق</button>
+            <div class="chapter-counter">
+                <span class="chapter-number">1</span>
+                <span class="chapter-number">2</span>
+                <span class="chapter-number">3</span>
+                <span class="chapter-number">4</span>
+                <span class="chapter-number">5</span>
+            </div>
+            <button class="nav-btn">الفصل التالي <i class="fas fa-arrow-left"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // إضافة تأثيرات تفاعلية
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأثيرات ظهور النص
+            const animateElements = document.querySelectorAll('.animate-text');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+            });
+            
+            setTimeout(() => {
+                animateElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.animation = 'fadeInUp 0.8s ease forwards';
+                    }, index * 200);
+                });
+            }, 300);
+            
+            // تأثيرات ظهور الفصول
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach((chapter, index) => {
+                chapter.style.opacity = '0';
+                chapter.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    chapter.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    chapter.style.opacity = '1';
+                    chapter.style.transform = 'translateY(0)';
+                }, 500 + index * 200);
+            });
+            
+            // تأثيرات الأزرار
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseover', () => {
+                    btn.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+                
+                btn.addEventListener('mouseout', () => {
+                    btn.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
